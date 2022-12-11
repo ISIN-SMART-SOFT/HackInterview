@@ -1,6 +1,9 @@
-package ru.isinsmartsoft.hackinterview.app.model.entity
+package ru.isinsmartsoft.hackinterview.app.model.dto
 
-/**
- * A Projection for the {@link ru.isinsmartsoft.hackinterview.app.model.entity.Interview} entity
- */
-interface InterviewInfo
+import java.time.Instant
+
+data class InterviewDTO(
+    val title: String,
+    val description: String,
+    val dateMeet: Instant,
+)

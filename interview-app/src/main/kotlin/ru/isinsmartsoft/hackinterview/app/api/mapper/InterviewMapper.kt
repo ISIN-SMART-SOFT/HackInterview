@@ -1,7 +1,16 @@
 package ru.isinsmartsoft.hackinterview.app.api.mapper
 
-/**
- * @author Krylov Sergey
- * @date  11.12.2022 15:34
- */class InterviewMapper {
+import org.springframework.stereotype.Component
+import ru.isinsmartsoft.hackinterview.app.api.dto.response.InterviewResponse
+import ru.isinsmartsoft.hackinterview.app.model.entity.Interview
+
+@Component
+class InterviewMapper {
+
+    fun toResponse(interview: Interview) = InterviewResponse(
+        id = interview.id!!,
+        title = interview.title,
+        description = interview.description,
+        dateMeet = interview.dateMeet
+    )
 }

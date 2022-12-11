@@ -8,18 +8,13 @@ plugins {
     kotlin("plugin.spring") version "1.7.21"
     kotlin("plugin.jpa") version "1.7.21"
 
-    id("org.springframework.boot") version "3.0.0"
-    id("io.spring.dependency-management") version "1.1.0"
+    id("org.springframework.boot") version "2.6.4"
+    id("io.spring.dependency-management") version "1.0.11.RELEASE"
 
     id("org.jlleitschuh.gradle.ktlint") version "10.2.0"
-
-    // Open Api
-    id("org.springdoc.openapi-gradle-plugin") version "1.3.3"
-    id("com.github.johnrengelman.processes") version "0.5.0" // for openapi-gradle-plugin
 }
 
 group = "ru.isin-smart-soft"
-version = "1.0.0"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
@@ -36,6 +31,9 @@ dependencies {
     // Kotlin
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    implementation("org.springdoc:springdoc-openapi-ui:$swaggerVersion")
+    implementation("org.springdoc:springdoc-openapi-kotlin:$swaggerVersion")
 
     // Testing
     testImplementation("org.springframework.boot:spring-boot-starter-test")

@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  forward-headers-strategy: framework
+  max-http-request-header-size: 131072
+  error:
+    include-exception: true
+    include-stacktrace: always
+
+spring:
+  application:
+    name: hack-interview
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:5444/${DB_NAME:hack-interview}
+    password: ${DB_PASS:654321}
+    username: ${DB_USER:admin}
+    driver-class-name: org.postgresql.Driver
+
+logging:
+  level:
+    ru: debug
